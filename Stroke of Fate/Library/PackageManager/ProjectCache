@@ -1,33 +1,33 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/chris/OneDrive/Documents/Unity Projects/My project/Packages/manifest.json
+    m_FilePath: C:/Users/Angel Avalos/Desktop/brownies/Stroke of Fate/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639234735735308070
-    m_Hash: 3285889918
+      ticks: 639246682150090170
+    m_Hash: 2623384710
   m_LockFileStatus:
-    m_FilePath: C:/Users/chris/OneDrive/Documents/Unity Projects/My project/Packages/packages-lock.json
+    m_FilePath: C:/Users/Angel Avalos/Desktop/brownies/Stroke of Fate/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639234736560969157
-    m_Hash: 2511796088
+      ticks: 639252716705221965
+    m_Hash: 2683185643
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/chris/OneDrive/Documents/Unity Projects/My project/Packages
-m_EditorVersion: 6000.4.1f1 (8535861f39e1)
+m_ProjectPath: C:/Users/Angel Avalos/Desktop/brownies/Stroke of Fate/Packages
+m_EditorVersion: 6000.4.1f1 (336a400b9ea2)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@14.0.3
   testable: 0
   isDirectDependency: 1
   version: 14.0.3
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.animation@a6f2f1d22eb5
   assetPath: Packages/com.unity.2d.animation
   name: com.unity.2d.animation
   displayName: 2D Animation
@@ -203,6 +203,9 @@ m_ResolvedPackages:
     - 15.0.3
     - 15.1.0
     - 16.0.0
+    - 16.0.1
+    - 17.0.0
+    - 17.0.1
     compatible:
     - 14.0.3
     - 14.0.4
@@ -241,7 +244,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -340,7 +343,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.0.1
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.aseprite@151b68d46c40
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.aseprite@151b68d46c40
   assetPath: Packages/com.unity.2d.aseprite
   name: com.unity.2d.aseprite
   displayName: 2D Aseprite Importer
@@ -393,6 +396,7 @@ m_ResolvedPackages:
     - 5.0.2
     - 5.0.3
     - 6.0.0
+    - 7.0.0
     compatible:
     - 4.0.1
     - 4.0.2
@@ -431,7 +435,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -526,7 +530,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 13.0.2
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.psdimporter@11a0e04e0561
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.psdimporter@11a0e04e0561
   assetPath: Packages/com.unity.2d.psdimporter
   name: com.unity.2d.psdimporter
   displayName: 2D PSD Importer
@@ -646,6 +650,8 @@ m_ResolvedPackages:
     - 14.0.2
     - 14.0.3
     - 15.0.0
+    - 15.0.1
+    - 16.0.0
     compatible:
     - 13.0.2
     - 13.0.3
@@ -680,7 +686,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -769,7 +775,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.sprite@929df5adbb1f
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.sprite@929df5adbb1f
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -860,7 +866,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 14.0.1
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.spriteshape@da3647ffbbd7
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.spriteshape@da3647ffbbd7
   assetPath: Packages/com.unity.2d.spriteshape
   name: com.unity.2d.spriteshape
   displayName: 2D SpriteShape
@@ -983,6 +989,7 @@ m_ResolvedPackages:
     - 15.0.2
     - 15.0.3
     - 16.0.0
+    - 17.0.0
     compatible:
     - 14.0.1
     recommended: 14.0.1
@@ -1016,7 +1023,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -1104,7 +1111,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.tilemap@c457c5249013
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.tilemap@c457c5249013
   assetPath: Packages/com.unity.2d.tilemap
   name: com.unity.2d.tilemap
   displayName: 2D Tilemap Editor
@@ -1214,7 +1221,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 7.0.1
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.tilemap.extras@66df903b3633
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.tilemap.extras@66df903b3633
   assetPath: Packages/com.unity.2d.tilemap.extras
   name: com.unity.2d.tilemap.extras
   displayName: 2D Tilemap Extras
@@ -1303,6 +1310,8 @@ m_ResolvedPackages:
     - 8.88.0-exp.1
     - 8.88.0-exp.2
     - 9.0.0
+    - 9.0.1
+    - 10.0.0
     compatible:
     - 7.0.1
     - 8.0.0-exp.1
@@ -1403,7 +1412,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.1
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.tooling@baa4133dcff2
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.tooling@baa4133dcff2
   assetPath: Packages/com.unity.2d.tooling
   name: com.unity.2d.tooling
   displayName: 2D Tooling
@@ -1429,6 +1438,8 @@ m_ResolvedPackages:
     - 3.0.0
     - 3.0.1
     - 4.0.0
+    - 4.0.1
+    - 5.0.0
     compatible:
     - 2.0.1
     - 2.0.2
@@ -1461,7 +1472,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -1542,7 +1553,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.11.4
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.collab-proxy@a5329f833fa8
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.collab-proxy@a5329f833fa8
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -1652,13 +1663,12 @@ m_ResolvedPackages:
     - 2.13.5
     - 2.13.6
     compatible:
-    - 2.11.4
     - 2.12.4
     - 2.13.3
     - 2.13.4
     - 2.13.5
     - 2.13.6
-    recommended: 2.11.4
+    recommended: 2.12.4
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -1702,7 +1712,7 @@ m_ResolvedPackages:
     revision: 164a710206077e1184a134f18801dae560fdf28a
     path: 
   unityLifecycle:
-    version: 2.11.4
+    version: 2.12.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -1730,8 +1740,8 @@ m_ResolvedPackages:
     productId: 
   fingerprint: a5329f833fa805a96ac8b0a1eb09dc64c076b032
   editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 2.11.4
+    compatibilityLevel: 1
+    minimumPackageVersion: 2.12.4
     minimumUnityVersion: 2021.3.0f1
   compliance:
     status: 0
@@ -1744,7 +1754,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.39
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.ide.rider@4504839d03f7
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.ide.rider@4504839d03f7
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -1810,9 +1820,11 @@ m_ResolvedPackages:
     - 3.0.38
     - 3.0.39
     - 3.0.40
+    - 3.1.0
     compatible:
     - 3.0.39
     - 3.0.40
+    - 3.1.0
     recommended: 3.0.40
     deprecated:
     - 3.0.37
@@ -1889,7 +1901,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.27
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.ide.visualstudio@dc1ddd4f09b6
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.ide.visualstudio@dc1ddd4f09b6
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -2021,7 +2033,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.19.0
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -2207,7 +2219,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -2314,7 +2326,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 17.4.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.render-pipelines.universal@580a03820d50
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.render-pipelines.universal@b6c3ec8118ec
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal Render Pipeline
@@ -2367,7 +2379,7 @@ m_ResolvedPackages:
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.terrain
     version: 1.0.0
   - name: com.unity.shadergraph
@@ -2432,7 +2444,7 @@ m_ResolvedPackages:
     errorCode: 
   assetStore:
     productId: 
-  fingerprint: 580a03820d5019a035c1667354e14ff7e2a14246
+  fingerprint: b6c3ec8118ec6f199c763ff2805f375859f67184
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 17.4.0
@@ -2448,7 +2460,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.test-framework@76560ee600cb
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.test-framework@76560ee600cb
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -2549,7 +2561,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.11
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.timeline@bfd27f8016ff
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.timeline@bfd27f8016ff
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -2658,7 +2670,6 @@ m_ResolvedPackages:
     - 1.8.12
     - 1.8.13
     compatible:
-    - 1.8.11
     - 1.8.12
     - 1.8.13
     recommended: 1.8.13
@@ -2711,7 +2722,7 @@ m_ResolvedPackages:
     revision: cdac322c9875133dd1579842f73adb7f463c6d0b
     path: 
   unityLifecycle:
-    version: 1.8.11
+    version: 1.8.12
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -2740,8 +2751,8 @@ m_ResolvedPackages:
     productId: 
   fingerprint: bfd27f8016ffda6a22579ffc468432a96b2cc5b6
   editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 1.8.11
+    compatibilityLevel: 1
+    minimumPackageVersion: 1.8.12
     minimumUnityVersion: 2022.3
   compliance:
     status: 0
@@ -2754,7 +2765,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.ugui@d8a2716f3013
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.ugui@d8a2716f3013
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: uGUI
@@ -2861,7 +2872,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.11
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.visualscripting@8bed5ad90189
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.visualscripting@8bed5ad90189
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -3003,7 +3014,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.accessibility
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.accessibility
   assetPath: Packages/com.unity.modules.accessibility
   name: com.unity.modules.accessibility
   displayName: Accessibility
@@ -3091,7 +3102,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.adaptiveperformance
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.adaptiveperformance
   assetPath: Packages/com.unity.modules.adaptiveperformance
   name: com.unity.modules.adaptiveperformance
   displayName: Adaptive Performance
@@ -3185,7 +3196,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.ai
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.ai
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -3273,7 +3284,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.androidjni
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.androidjni
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -3360,7 +3371,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.animation
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.animation
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -3448,7 +3459,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.assetbundle
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.assetbundle
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -3536,7 +3547,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.audio
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.audio
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -3624,7 +3635,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.cloth
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.cloth
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -3716,7 +3727,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.director
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.director
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -3812,7 +3823,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.imageconversion
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.imageconversion
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -3900,7 +3911,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.imgui
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.imgui
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -3988,7 +3999,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.jsonserialize
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.jsonserialize
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -4076,7 +4087,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.particlesystem
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.particlesystem
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -4164,7 +4175,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.physics
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.physics
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -4252,7 +4263,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.physics2d
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.physics2d
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -4340,7 +4351,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.screencapture
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.screencapture
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -4432,7 +4443,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.terrain
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.terrain
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -4520,7 +4531,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.terrainphysics
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.terrainphysics
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -4616,7 +4627,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.tilemap
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.tilemap
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -4707,7 +4718,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.ui
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.ui
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -4795,7 +4806,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.uielements
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.uielements
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -4903,7 +4914,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.umbra
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.umbra
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -4991,7 +5002,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unityanalytics
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unityanalytics
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -5086,7 +5097,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unitywebrequest
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unitywebrequest
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -5174,7 +5185,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -5270,7 +5281,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unitywebrequestaudio
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unitywebrequestaudio
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -5366,7 +5377,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unitywebrequesttexture
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unitywebrequesttexture
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -5462,7 +5473,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.unitywebrequestwww
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.unitywebrequestwww
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -5574,7 +5585,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.vectorgraphics
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.vectorgraphics
   assetPath: Packages/com.unity.modules.vectorgraphics
   name: com.unity.modules.vectorgraphics
   displayName: Vector Graphics
@@ -5681,7 +5692,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.vehicles
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.vehicles
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -5773,7 +5784,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.video
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.video
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -5873,7 +5884,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.vr
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.vr
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -5976,7 +5987,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.wind
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.wind
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -6064,7 +6075,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.xr
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.xr
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -6164,7 +6175,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.subsystems
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.subsystems
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -6256,7 +6267,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.modules.hierarchycore
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.modules.hierarchycore
   assetPath: Packages/com.unity.modules.hierarchycore
   name: com.unity.modules.hierarchycore
   displayName: Hierarchy Core
@@ -6344,7 +6355,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.ext.nunit@d8c07649098d
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.ext.nunit@d8c07649098d
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -6435,7 +6446,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.4.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.render-pipelines.core@e6c93b445dd3
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.render-pipelines.core@c047d1619bbd
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Scriptable Render Pipeline Core
@@ -6495,7 +6506,7 @@ m_ResolvedPackages:
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.terrain
     version: 1.0.0
   keywords: []
@@ -6548,7 +6559,7 @@ m_ResolvedPackages:
     errorCode: 
   assetStore:
     productId: 
-  fingerprint: e6c93b445dd365d92956fb0bdc95c39e3c4b64ea
+  fingerprint: c047d1619bbd2cf98666984e7d02b77e4e108092
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 17.4.0
@@ -6564,7 +6575,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.4.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.shadergraph@6ab0d236faac
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.shadergraph@6d2ff5988597
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -6616,7 +6627,7 @@ m_ResolvedPackages:
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.terrain
     version: 1.0.0
   - name: com.unity.searcher
@@ -6671,7 +6682,7 @@ m_ResolvedPackages:
     errorCode: 
   assetStore:
     productId: 
-  fingerprint: 6ab0d236faac78e4e98e6173d8e0db7553ea16cd
+  fingerprint: 6d2ff5988597a1a54e8af8fa8f0c1fd6469814f0
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 17.4.0
@@ -6687,7 +6698,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.4.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.render-pipelines.universal-config@0db4263b9e6b
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.render-pipelines.universal-config@0db4263b9e6b
   assetPath: Packages/com.unity.render-pipelines.universal-config
   name: com.unity.render-pipelines.universal-config
   displayName: Universal Render Pipeline Config
@@ -6733,7 +6744,7 @@ m_ResolvedPackages:
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.terrain
     version: 1.0.0
   keywords: []
@@ -6802,7 +6813,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 13.0.1
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.2d.common@49d8bea2bff3
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.2d.common@49d8bea2bff3
   assetPath: Packages/com.unity.2d.common
   name: com.unity.2d.common
   displayName: 2D Common
@@ -6897,6 +6908,7 @@ m_ResolvedPackages:
     - 14.0.0
     - 14.0.1
     - 15.0.0
+    - 16.0.0
     compatible:
     - 13.0.1
     - 13.0.2
@@ -6937,7 +6949,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   - name: com.unity.modules.animation
     version: 1.0.0
   - name: com.unity.modules.uielements
@@ -7019,7 +7031,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.3
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.mathematics@19a9377c4ffa
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.mathematics@19a9377c4ffa
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -7130,7 +7142,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 6.4.0
   source: 2
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.collections@538ace9075bc
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.collections@538ace9075bc
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -7177,7 +7189,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.test-framework.performance
-    version: 3.2.0
+    version: 3.3.0
   keywords:
   - dots
   - collections
@@ -7247,7 +7259,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.4
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.searcher@d45a78918735
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.searcher@d45a78918735
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -7357,7 +7369,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.8.28
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.burst@07790c2d06d9
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.burst@07790c2d06d9
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -7607,7 +7619,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.6
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -7707,12 +7719,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.test-framework.performance@3.2.0
+- packageId: com.unity.test-framework.performance@3.3.0
   testable: 0
   isDirectDependency: 0
-  version: 3.2.0
+  version: 3.3.0
   source: 1
-  resolvedPath: C:\Users\chris\OneDrive\Documents\Unity Projects\My project\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562
+  resolvedPath: C:\Users\Angel Avalos\Desktop\brownies\Stroke of Fate\Library\PackageCache\com.unity.test-framework.performance@a902ab7fb342
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API
@@ -7787,14 +7799,12 @@ m_ResolvedPackages:
     - 3.4.2
     - 3.5.0
     compatible:
-    - 3.2.0
-    - 3.2.1
     - 3.3.0
     - 3.4.0
     - 3.4.1
     - 3.4.2
     - 3.5.0
-    recommended: 3.2.1
+    recommended: 3.3.0
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -7828,16 +7838,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638936561440790000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework.performance@3.2/manual/index.html
+  datePublishedTicks: 639095201063560000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework.performance@3.3/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.test-framework.performance.git
-    revision: fe7ade132131103e7608be564921ab8de35fd8e4
+    revision: 21da3562936191fe4ea25d72eaa5b3f5347455fa
     path: 
   unityLifecycle:
-    version: 3.2.0
+    version: 3.3.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -7848,7 +7858,7 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n\n- Improved render threading mode reporting"}'
+  upmReserved: '{"changelog":"- Internal fixes only"}'
   signature:
     status: 1
     reason: Signature is ok
@@ -7862,10 +7872,10 @@ m_ResolvedPackages:
     errorCode: 
   assetStore:
     productId: 
-  fingerprint: 0840f58e45624f7677679a0f8b6a5137689e607f
+  fingerprint: a902ab7fb342bba0c712bdaafd89b466b72bf047
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 3.2.0
+    minimumPackageVersion: 3.3.0
     minimumUnityVersion: 2020.3
   compliance:
     status: 0
@@ -7873,4 +7883,4 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-m_BuiltInPackagesHash: 1fff4c9ac7292095563714359bb5d3285809cdd2
+m_BuiltInPackagesHash: c99f4ca20d593402e6900de5a86172ccae1f6cc5
