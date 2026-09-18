@@ -106,3 +106,5 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /Stroke of Fate/[Aa]ssets/[Ss]ceneDependencyCache*
+/Stroke of Fate/Library/ArtifactDB
+/Stroke of Fate/Library/ArtifactDB-lock
