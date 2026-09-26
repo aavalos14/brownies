@@ -571,7 +571,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   powerMultiplier: 5
   maxPower: 15
-  stopVelocityThreshold: 0.05
+  stopVelocityThreshold: 0.09
+  slowDownTime: 3
 --- !u!50 &380669587
 Rigidbody2D:
   serializedVersion: 5
