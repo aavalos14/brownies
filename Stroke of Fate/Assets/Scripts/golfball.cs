@@ -7,15 +7,16 @@ public class golfball : MonoBehaviour
     private Vector2 clickPosition;
     private bool isReadyToPutt = true;
 
+    [Header("Putt Settings")]
     public float powerMultiplier = 5f;
     public float maxPower = 15f;
     public float stopVelocityThreshold = 0.05f;
 
-    // NEW: How long the ball can roll before stopping
+    [Header("Slow Down Settings")]
     public float slowDownTime = 3f;
 
-    // NEW: Keeps track of how long the ball has been moving
     private float puttTimer = 0f;
+    private Vector2 startingVelocity;
 
     void Start()
     {
@@ -29,18 +30,26 @@ public class golfball : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             isReadyToPutt = true;
-
-            // Reset timer
             puttTimer = 0f;
         }
         else
         {
             isReadyToPutt = false;
 
-            // NEW: Count how long the ball has been moving
+            // Count how long the ball has been moving
             puttTimer += Time.deltaTime;
 
-            // NEW: Stop the ball after the chosen amount of time
+            // Calculate how far through the timer we are
+            float timerPercentage = puttTimer / slowDownTime;
+
+            // Gradually slow the ball down
+            rb.linearVelocity = Vector2.Lerp(
+                startingVelocity,
+                Vector2.zero,
+                timerPercentage
+            );
+
+            // Stop completely when the timer reaches the end
             if (puttTimer >= slowDownTime)
             {
                 rb.linearVelocity = Vector2.zero;
@@ -92,8 +101,11 @@ public class golfball : MonoBehaviour
                     ForceMode2D.Impulse
                 );
 
-                // NEW: Start the timer when the ball is hit
+                // Start the timer
                 puttTimer = 0f;
+
+                // Remember the velocity from the new putt
+                startingVelocity = rb.linearVelocity;
             }
         }
     }
