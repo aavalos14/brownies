@@ -25,45 +25,42 @@ public class golfball : MonoBehaviour
 
     void Update()
     {
-        // Check if the ball has stopped moving
-        if (rb.linearVelocity.magnitude < stopVelocityThreshold)
-        {
-            rb.linearVelocity = Vector2.zero;
-            isReadyToPutt = true;
-            puttTimer = 0f;
-        }
-        else
-        {
-            isReadyToPutt = false;
-
-            // Count how long the ball has been moving
-            puttTimer += Time.deltaTime;
-
-            // Calculate how far through the timer we are
-            float timerPercentage = puttTimer / slowDownTime;
-
-            // Gradually slow the ball down
-            rb.linearVelocity = Vector2.Lerp(
-                startingVelocity,
-                Vector2.zero,
-                timerPercentage
-            );
-
-            // Stop completely when the timer reaches the end
-            if (puttTimer >= slowDownTime)
-            {
-                rb.linearVelocity = Vector2.zero;
-                puttTimer = 0f;
-                isReadyToPutt = true;
-            }
-        }
-
         if (isReadyToPutt)
         {
             HandlePuttInput();
         }
     }
 
+    void FixedUpdate()
+    {
+        if (isReadyToPutt)
+        {
+            return;
+        }
+
+        if (rb.linearVelocity.magnitude < stopVelocityThreshold)
+        {
+            rb.linearVelocity = Vector2.zero;
+            isReadyToPutt = true;
+            puttTimer = 0f;
+            return;
+        }
+
+        puttTimer += Time.fixedDeltaTime;
+        float slowdownRate = startingVelocity.magnitude / Mathf.Max(slowDownTime, Time.fixedDeltaTime);
+        rb.linearVelocity = Vector2.MoveTowards(
+            rb.linearVelocity,
+            Vector2.zero,
+            slowdownRate * Time.fixedDeltaTime
+        );
+
+        if (puttTimer >= slowDownTime)
+        {
+            rb.linearVelocity = Vector2.zero;
+            puttTimer = 0f;
+            isReadyToPutt = true;
+        }
+    }
     void HandlePuttInput()
     {
         // Mouse button pressed
@@ -106,6 +103,7 @@ public class golfball : MonoBehaviour
 
                 // Remember the velocity from the new putt
                 startingVelocity = rb.linearVelocity;
+                isReadyToPutt = false;
             }
         }
     }
