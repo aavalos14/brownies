@@ -1,19 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class golfball : MonoBehaviour
 {
     private Rigidbody2D rb;
+    [SerializeField] private Slider powerSlider;
     private Vector2 clickPosition;
     private bool isReadyToPutt = true;
 
     [Header("Putt Settings")]
-    public float powerMultiplier = 5f;
-    public float maxPower = 15f;
-    public float stopVelocityThreshold = 0.05f;
+    [SerializeField] private float powerMultiplier = 5f;
+    [SerializeField] private float maxPower = 15f;
+    [SerializeField] private float stopVelocityThreshold = 0.05f;
 
     [Header("Slow Down Settings")]
-    public float slowDownTime = 3f;
+    [SerializeField] private float slowDownTime = 3f;
 
     private float puttTimer = 0f;
     private Vector2 startingVelocity;
