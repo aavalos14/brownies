@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
-    public void BeginRun()
+    public void BeginNextLevel()
     {
         SceneManager.LoadScene("Level");
     }

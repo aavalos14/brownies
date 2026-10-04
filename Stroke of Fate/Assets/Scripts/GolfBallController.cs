@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GolfBallController : MonoBehaviour
@@ -10,7 +11,10 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private Slider powerSlider;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private TMP_Text powerText;
-    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private AudioSource hitBallAudioSource;
+    [SerializeField] private AudioSource hitHoleAudioSource;
+    [SerializeField] private AudioClip hitBall;
+    [SerializeField] private AudioClip hitHole;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
@@ -117,12 +121,26 @@ public class GolfBallController : MonoBehaviour
                 if (Keyboard.current.spaceKey.wasReleasedThisFrame)
                 {
                     ShootBall();
+                    hitBallAudioSource.PlayOneShot(hitBall);
                     isCharging = false;
                 }
             }
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Hole"))
+        {
+            hitHoleAudioSource.PlayOneShot(hitHole);
+            // Wait 3 seconds and then load the shop
+            Invoke("LoadShop", 3f);
+        }
+    }
+    void LoadShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
     void ShootBall()
     {
         float actualForce = currentPowerPercent * maxShotForce;
