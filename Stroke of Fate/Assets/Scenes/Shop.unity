@@ -830,6 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df72ac4a6db145b48adefd86ce0b627b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  currentSpriteName: Grassland Level 1
 --- !u!4 &1398451466
 Transform:
   m_ObjectHideFlags: 0
