@@ -11,10 +11,17 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private Slider powerSlider;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private TMP_Text powerText;
+    [SerializeField] private TMP_Text scoreText;
     [SerializeField] private AudioSource hitBallAudioSource;
     [SerializeField] private AudioSource hitHoleAudioSource;
     [SerializeField] private AudioClip hitBall;
     [SerializeField] private AudioClip hitHole;
+    [SerializeField] private GameObject shopUI;
+    [SerializeField] private GameObject instructionText;
+    [SerializeField] private logic logicScript;
+    private LevelManager levelManager;
+    private bool ballCaptured;
+    private bool betweenLevels = false;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
@@ -33,7 +40,7 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private Gradient powerBarGradient; // Configure Green -> Yellow -> Red in Inspector
 
     
-    void Start()
+    private void Start()
     {
         if (lineRenderer != null)
         {
@@ -41,9 +48,9 @@ public class GolfBallController : MonoBehaviour
         }
             
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (rb.bodyType == RigidbodyType2D.Static)
+        if (betweenLevels)
         {
             isSlowingDown = false;
             return;
@@ -67,9 +74,9 @@ public class GolfBallController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if (rb.bodyType == RigidbodyType2D.Static) return;
+        if (betweenLevels) return;
 
         // Stop aiming/shooting while moving
         if (rb.linearVelocity.magnitude > 0.05f) 
@@ -104,6 +111,10 @@ public class GolfBallController : MonoBehaviour
             // Key pressed this frame
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
+                if (shopUI.activeSelf)
+                {
+                    return;
+                }
                 isCharging = true;
             }
 
@@ -128,20 +139,72 @@ public class GolfBallController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Hole"))
+        if (ballCaptured || !other.CompareTag("Hole"))
+        {
+            return;
+        }
+
+        if (rb == null)
+        {
+            return;
+        }
+
+        ballCaptured = true;
+
+        if (logicScript != null)
+        {
+            logicScript.AddScore(1000); // Add 1000 points for sinking the ball
+            if (scoreText != null)
+            {
+                scoreText.text = "Score: " + logicScript.GetScore().ToString();
+            }
+        }
+
+        if (hitHoleAudioSource != null && hitHole != null)
         {
             hitHoleAudioSource.PlayOneShot(hitHole);
-            // Wait 3 seconds and then load the shop
-            Invoke("LoadShop", 3f);
         }
+
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = false;
+        }
+        betweenLevels = true; // Set flag to indicate we're between levels
+        rb.position = other.transform.position;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        Invoke(nameof(ExitLevel), 3f);
     }
-    void LoadShop()
+    private void ExitLevel()
     {
-        SceneManager.LoadScene("Shop");
+        shopUI.SetActive(true);
+        if (instructionText != null)
+        {
+            instructionText.SetActive(false);
+        }
+        EnableNextLevel();
     }
-    void ShootBall()
+    private void ResetBall()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        ballCaptured = false;
+        betweenLevels = false; // Reset the between levels flag
+        lineRenderer.enabled = true; // Show line renderer
+        transform.position = Vector3.zero; // Reset position to origin (or any desired position)
+    }
+    private void EnableNextLevel()
+    {
+       levelManager = FindAnyObjectByType<LevelManager>();
+       if (levelManager != null)
+       {
+           levelManager.CompleteCurrentLevel();
+       }
+       ResetBall(); // Reset ball for the next level
+    }
+    private void ShootBall()
     {
         float actualForce = currentPowerPercent * maxShotForce;
         rb.AddForce(shotDirection * actualForce, ForceMode2D.Impulse);
@@ -153,7 +216,7 @@ public class GolfBallController : MonoBehaviour
         if (lineRenderer != null) lineRenderer.enabled = false;
     }
 
-    void UpdateSliderUI()
+    private void UpdateSliderUI()
     {
         if (powerSlider != null)
         {

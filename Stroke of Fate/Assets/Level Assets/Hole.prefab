@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 5738015129420112363}
   - component: {fileID: 6000268903018031318}
   - component: {fileID: 749494152002481195}
-  - component: {fileID: 2958470828901282980}
-  - component: {fileID: 7834762677282333933}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Hole
@@ -130,33 +128,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &2958470828901282980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681136380397477727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e094915a961bd645aa60074c07b1c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  currentArea: {fileID: 0}
-  newArea: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &7834762677282333933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681136380397477727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4943baa4aeee9624db55e13c0ffad7ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::golfhole
-  logic: {fileID: 0}
-  scoreText: {fileID: 0}
