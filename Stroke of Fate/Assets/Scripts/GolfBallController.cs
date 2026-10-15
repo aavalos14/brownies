@@ -206,6 +206,7 @@ public class GolfBallController : MonoBehaviour
     }
     private void ShootBall()
     {
+        logicScript.AddStroke();
         float actualForce = currentPowerPercent * maxShotForce;
         rb.AddForce(shotDirection * actualForce, ForceMode2D.Impulse);
         puttTimer = 0f;
