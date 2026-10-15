@@ -16,3 +16,5 @@ public class logic : MonoBehaviour
         return score;
     }
 }
+
+
