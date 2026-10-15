@@ -19,6 +19,9 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
+    [SerializeField] private GolfStrokeCounter strokeCounter;
+    [SerializeField] private TMP_Text StrokeText;
+
     private LevelManager levelManager;
     private bool ballCaptured;
     private bool betweenLevels = false;
@@ -132,6 +135,7 @@ public class GolfBallController : MonoBehaviour
                 if (Keyboard.current.spaceKey.wasReleasedThisFrame)
                 {
                     ShootBall();
+                    strokeCounter.AddStroke();
                     hitBallAudioSource.PlayOneShot(hitBall);
                     isCharging = false;
                 }
@@ -161,7 +165,10 @@ public class GolfBallController : MonoBehaviour
                 scoreText.text = "Score: " + logicScript.GetScore().ToString();
             }
         }
-
+// if (strokeCounter != null)
+// {
+//     strokeCounter.AddStroke();
+// }
         if (hitHoleAudioSource != null && hitHole != null)
         {
             hitHoleAudioSource.PlayOneShot(hitHole);
@@ -216,6 +223,7 @@ public class GolfBallController : MonoBehaviour
         if (lineRenderer != null) lineRenderer.enabled = false;
     }
 
+
     private void UpdateSliderUI()
     {
         if (powerSlider != null)
@@ -236,3 +244,4 @@ public class GolfBallController : MonoBehaviour
         }
     }
 }
+
