@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 380669589}
   - component: {fileID: 380669593}
   - component: {fileID: 380669591}
+  - component: {fileID: 380669594}
   m_Layer: 0
   m_Name: StrokeText
   m_TagString: Untagged
@@ -1032,6 +1033,20 @@ CanvasRenderer:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &380669594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380669583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be864aff92cdee249aa4ece458997d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLastPosition
+  stopSpeed: 0.05
+  stopDelay: 0.5
 --- !u!4 &391019728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5738015129420112363, guid: 3dc46a9f10c22ff42a8db5cae18813c0, type: 3}
@@ -4251,6 +4266,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880427502}
   m_CullTransparentMesh: 1
+--- !u!1001 &893205703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.525
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.755545
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.838688
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874883202627602064, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663833424919273815, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
+      propertyPath: m_Name
+      value: Space Cannon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4fc8c2e54997ca4ea1d457018ca14f4, type: 3}
 --- !u!1 &1041174287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13065,3 +13145,4 @@ SceneRoots:
   - {fileID: 1836141183}
   - {fileID: 1636842137}
   - {fileID: 1275221469}
+  - {fileID: 893205703}
