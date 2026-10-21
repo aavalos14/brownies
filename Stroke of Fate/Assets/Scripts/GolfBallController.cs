@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GolfBallController : MonoBehaviour
@@ -180,6 +179,7 @@ public class GolfBallController : MonoBehaviour
     private void ExitLevel()
     {
         shopUI.SetActive(true);
+        logicScript.ResetStrokes(); // Reset strokes for the next level
         if (instructionText != null)
         {
             instructionText.SetActive(false);
