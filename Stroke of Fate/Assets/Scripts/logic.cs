@@ -15,21 +15,21 @@ public class logic : MonoBehaviour
     {
         return score;
     }
-      public int strokes = 0;
+      public int stroke = 1;
 
     public TMP_Text strokeText;
 
     // Call this every time the ball is hit
     public void AddStroke()
     {
-        strokes++;
+        stroke++;
         UpdateStrokeText();
     }
 
     // Call this when the ball reaches the hole
     public void ResetStrokes()
     {
-        strokes = 0;
+        stroke = 1;
         UpdateStrokeText();
     }
 
@@ -38,7 +38,19 @@ public class logic : MonoBehaviour
     {
         if (strokeText != null)
         {
-            strokeText.text = "Strokes: " + strokes;
+            strokeText.text = "Stroke: " + stroke;
+            if (stroke == 4)
+            {
+                strokeText.color = Color.yellow;
+            }
+            else if (stroke >= 5)
+            {
+                strokeText.color = Color.red;
+            }
+            else
+            {
+                strokeText.color = Color.white;
+            }
         }
     }
 
