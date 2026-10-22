@@ -7363,7 +7363,7 @@ EdgeCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ca84ff7fbb98923428858aa05db09d8b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -17210,7 +17210,7 @@ EdgeCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ca84ff7fbb98923428858aa05db09d8b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -17685,6 +17685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   levels:
   - {fileID: 1045025788}
+  - {fileID: 1278542675}
   - {fileID: 76850145}
   - {fileID: 1301700332}
   - {fileID: 303193463}
