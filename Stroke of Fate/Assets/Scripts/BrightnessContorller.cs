@@ -9,18 +9,35 @@ public class BrightnessController : MonoBehaviour
 
     void Start()
     {
-        brightnessSlider.value = 0.5f;
-        UpdateBrightness(0.5f);
-        brightnessSlider.onValueChanged.AddListener(UpdateBrightness);
+        float savedBrightness = PlayerPrefs.GetFloat("Brightness", 0.5f);
+
+        if (brightnessSlider != null)
+        {
+            brightnessSlider.value = savedBrightness;
+            brightnessSlider.onValueChanged.AddListener(UpdateBrightness);
+        }
+
+        UpdateBrightness(savedBrightness);
     }
 
     public void UpdateBrightness(float value)
     {
-        float darkness = Mathf.Clamp01((0.5f - value) * 1.6f);
+        PlayerPrefs.SetFloat("Brightness", value);
 
-        Color color = darknessOverlay.color;
-        color.a = darkness;
+        if (darknessOverlay == null)
+            return;
+
+        Color color;
+
+        if (value < 0.5f)
+        {
+            color = new Color(0f, 0f, 0f, (0.5f - value) * 1.6f);
+        }
+        else
+        {
+            color = new Color(1f, 1f, 1f, (value - 0.5f) * 1.2f);
+        }
+
         darknessOverlay.color = color;
     }
 }
-
