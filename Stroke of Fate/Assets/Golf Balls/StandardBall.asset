@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StandardBall
   m_EditorClassIdentifier: Assembly-CSharp::BallData
   ballName: Standard Ball
-  ballSprite: {fileID: 0}
+  ballSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   description: Standard Ball
   canBePurchased: 0
   shopCost: 0
