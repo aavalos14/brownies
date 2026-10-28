@@ -864,6 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278586bafb030ff4da3390e1c2d79f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrightnessController
+  brightnessSlider: {fileID: 0}
+  darknessOverlay: {fileID: 0}
 --- !u!4 &232657660
 Transform:
   m_ObjectHideFlags: 0
@@ -1365,6 +1367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GolfBallController
   rb: {fileID: 380669587}
+  spriteRenderer: {fileID: 380669584}
   powerSlider: {fileID: 1772485806}
   lineRenderer: {fileID: 380669590}
   powerText: {fileID: 1949168888}
@@ -1376,6 +1379,8 @@ MonoBehaviour:
   shopUI: {fileID: 78218739}
   instructionText: {fileID: 1297634522}
   logicScript: {fileID: 1836141182}
+  ballData: {fileID: 11400000, guid: 54ccc7761d4d44b4e9ae7aff32265597, type: 2}
+  bunkerScript: {fileID: 703653866}
   maxShotForce: 30
   powerOscillationSpeed: 2
   slowDownTime: 3
@@ -7744,6 +7749,17 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &703653866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4206517386399400748, guid: 5c14eb25d3b960640a9a703a3be0483f, type: 3}
+  m_PrefabInstance: {fileID: 1743601605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703653859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb2aae4638385841b1ad99acdc22e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bunker
 --- !u!1 &781844802
 GameObject:
   m_ObjectHideFlags: 0
@@ -18000,6 +18016,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc46a9f10c22ff42a8db5cae18813c0, type: 3}
+--- !u!114 &1236998360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 949910200243996491, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+  m_PrefabInstance: {fileID: 5434760617225070669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1275221467
 GameObject:
   m_ObjectHideFlags: 0
@@ -24007,6 +24034,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506407073}
   m_CullTransparentMesh: 1
+--- !u!114 &1531816828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5450655285210173229, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+  m_PrefabInstance: {fileID: 5434760617225070669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1553529054
 GameObject:
   m_ObjectHideFlags: 0
@@ -25617,6 +25655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1356247800}
     m_Modifications:
+    - target: {fileID: 1623647425226480299, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_Name
+      value: Cost Text
+      objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -25643,11 +25685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 135.69
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 94.827
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25679,11 +25721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -172
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 102
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25700,6 +25742,26 @@ PrefabInstance:
     - target: {fileID: 2569493420809074820, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_Name
       value: ShopButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: CostText
+      value: 
+      objectReference: {fileID: 1531816828}
+    - target: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: PowerText
+      value: 
+      objectReference: {fileID: 1236998360}
+    - target: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: itemImage
+      value: 
+      objectReference: {fileID: 1576158608}
+    - target: {fileID: 3068301717332185482, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_Name
+      value: Power Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303070695229079065, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_Name
+      value: Cost Label
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
