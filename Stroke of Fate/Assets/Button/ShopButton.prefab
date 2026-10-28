@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 377624228608822279}
   - component: {fileID: 7136813928945495490}
   - component: {fileID: 6896920134168287447}
+  - component: {fileID: 2835637758931469150}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -259,6 +260,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2835637758931469150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569493420809074820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e433fa76e5dbe849a5bcf49878fb1bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopButton
+  itemSO: {fileID: 11400000, guid: 553b922a5001aa34895255c6d08832e1, type: 2}
+  PowerText: {fileID: 0}
+  CostText: {fileID: 0}
+  itemImage: {fileID: 0}
 --- !u!1 &3068301717332185482
 GameObject:
   m_ObjectHideFlags: 0
