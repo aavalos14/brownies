@@ -35,6 +35,7 @@ public class PauseMenuManager : MonoBehaviour
         brightnessController = FindAnyObjectByType<BrightnessController>();
         previousCursorLockMode = Cursor.lockState;
         previousCursorVisible = Cursor.visible;
+        ApplySfxVolume(PlayerPrefs.GetFloat("SFXVolume", DefaultAudioSetting));
 
         BuildPauseButton();
         BuildPauseOverlay();
@@ -138,9 +139,25 @@ public class PauseMenuManager : MonoBehaviour
         CreateSettingsSlider("SFX Volume", -60f, PlayerPrefs.GetFloat("SFXVolume", DefaultAudioSetting), value =>
         {
             PlayerPrefs.SetFloat("SFXVolume", value);
+            PlayerPrefs.Save();
+            ApplySfxVolume(value);
         });
 
         CreateMenuButton(settingsView.transform, "Back", new Vector2(0f, -210f), ShowPauseView);
+    }
+
+    /// <summary>
+    /// Applies the saved SFX level to the audio sources in the active game.
+    /// </summary>
+    private void ApplySfxVolume(float volume)
+    {
+        AudioSource[] audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        float clampedVolume = Mathf.Clamp01(volume);
+
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.volume = clampedVolume;
+        }
     }
 
     private void CreateSettingsSlider(string label, float yPosition, float initialValue, UnityEngine.Events.UnityAction<float> onValueChanged)
