@@ -21,7 +21,7 @@ public class PauseMenuManager : MonoBehaviour
     private float previousTimeScale = 1f;
     private CursorLockMode previousCursorLockMode;
     private bool previousCursorVisible;
-    private BrightnessController brightnessController;
+    private Image darknessOverlay;
 
     private void Start()
     {
@@ -32,9 +32,15 @@ public class PauseMenuManager : MonoBehaviour
             existingPauseLabel.SetActive(false);
         }
 
-        brightnessController = FindAnyObjectByType<BrightnessController>();
+        Transform darknessOverlayTransform = transform.Find("DarknessOverlay");
+        if (darknessOverlayTransform != null)
+        {
+            darknessOverlay = darknessOverlayTransform.GetComponent<Image>();
+        }
+
         previousCursorLockMode = Cursor.lockState;
         previousCursorVisible = Cursor.visible;
+        UpdateBrightnessOverlay(PlayerPrefs.GetFloat("Brightness", 0.5f));
         ApplySfxVolume(PlayerPrefs.GetFloat("SFXVolume", DefaultAudioSetting));
 
         BuildPauseButton();
@@ -90,7 +96,7 @@ public class PauseMenuManager : MonoBehaviour
         SetStretch(overlayRect);
 
         Image overlayImage = pauseOverlay.AddComponent<Image>();
-        overlayImage.color = new Color(0.015f, 0.035f, 0.03f, 0.78f);
+        overlayImage.color = new Color(0.015f, 0.035f, 0.03f, 0.42f);
         overlayImage.raycastTarget = true;
 
         GameObject panel = CreateUIObject("PausePanel", pauseOverlay.transform);
@@ -119,17 +125,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         CreateText(settingsView.transform, "SettingsTitle", "SETTINGS", new Vector2(0f, 248f), new Vector2(440f, 64f), 38);
 
-        CreateSettingsSlider("Brightness", 140f, PlayerPrefs.GetFloat("Brightness", 0.5f), value =>
-        {
-            if (brightnessController != null)
-            {
-                brightnessController.UpdateBrightness(value);
-            }
-            else
-            {
-                PlayerPrefs.SetFloat("Brightness", value);
-            }
-        });
+        CreateSettingsSlider("Brightness", 140f, PlayerPrefs.GetFloat("Brightness", 0.5f), UpdateBrightnessOverlay);
 
         CreateSettingsSlider("Music Volume", 40f, PlayerPrefs.GetFloat("MusicVolume", DefaultAudioSetting), value =>
         {
@@ -147,11 +143,35 @@ public class PauseMenuManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Applies the saved SFX level to the audio sources in the active game.
+    /// Applies brightness to the gameplay overlay and persists the setting.
+    /// </summary>
+    private void UpdateBrightnessOverlay(float value)
+    {
+        float brightness = Mathf.Clamp01(value);
+        PlayerPrefs.SetFloat("Brightness", brightness);
+        PlayerPrefs.Save();
+
+        if (darknessOverlay == null)
+        {
+            return;
+        }
+
+        if (brightness < 0.5f)
+        {
+            darknessOverlay.color = new Color(0f, 0f, 0f, (0.5f - brightness) * 1.6f);
+        }
+        else
+        {
+            darknessOverlay.color = new Color(1f, 1f, 1f, (brightness - 0.5f) * 1.2f);
+        }
+    }
+
+    /// <summary>
+    /// Applies the selected SFX level to all active audio sources in gameplay.
     /// </summary>
     private void ApplySfxVolume(float volume)
     {
-        AudioSource[] audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        AudioSource[] audioSources = FindObjectsByType<AudioSource>();
         float clampedVolume = Mathf.Clamp01(volume);
 
         foreach (AudioSource audioSource in audioSources)
@@ -176,7 +196,6 @@ public class PauseMenuManager : MonoBehaviour
         slider.maxValue = 1f;
         slider.wholeNumbers = false;
         slider.direction = Slider.Direction.LeftToRight;
-        slider.value = Mathf.Clamp01(initialValue);
 
         GameObject fillObject = CreateUIObject("Fill", sliderObject.transform);
         RectTransform fillRect = fillObject.GetComponent<RectTransform>();
@@ -187,6 +206,7 @@ public class PauseMenuManager : MonoBehaviour
         fillRect.pivot = new Vector2(0f, 0.5f);
         Image fillImage = fillObject.AddComponent<Image>();
         fillImage.color = new Color(0.55f, 0.76f, 0.35f, 1f);
+        fillImage.raycastTarget = false;
         slider.fillRect = fillRect;
 
         GameObject handleObject = CreateUIObject("Handle", sliderObject.transform);
@@ -196,8 +216,9 @@ public class PauseMenuManager : MonoBehaviour
         handleImage.color = new Color(0.88f, 0.93f, 0.78f, 1f);
         slider.handleRect = handleRect;
         slider.targetGraphic = handleImage;
+        slider.value = slider.maxValue;
+        slider.value = Mathf.Clamp01(initialValue);
         slider.onValueChanged.AddListener(onValueChanged);
-        slider.SetValueWithoutNotify(Mathf.Clamp01(initialValue));
     }
 
     private void CreateMenuButton(Transform parent, string label, Vector2 position, UnityEngine.Events.UnityAction callback)
