@@ -86,7 +86,7 @@ public class GolfBallController : MonoBehaviour
 
     private void Update()
     {
-        if (betweenLevels)
+        if (Time.timeScale <= 0f || betweenLevels)
             return;
 
         // Stop aiming and shooting while the ball is moving.
