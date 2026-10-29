@@ -26,6 +26,7 @@ public class GolfBallController : MonoBehaviour
     private LevelManager levelManager;
     private bool ballCaptured;
     private bool betweenLevels = false;
+    private float ballPower = 1f;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
@@ -60,8 +61,20 @@ public class GolfBallController : MonoBehaviour
         if (ballData == null) return;
 
         spriteRenderer.sprite = ballData.ballSprite;
-        maxShotForce *= ballData.power;
+        ballPower = ballData.power;
         bunkerScript.speedMultiplier = ballData.traction;
+    }
+
+    public void SetBallData(BallData newBallData)
+    {
+        if (newBallData == null)
+        {
+            Debug.LogError("Cannot set the active ball because the BallData is null.", this);
+            return;
+        }
+
+        ballData = newBallData;
+        InitializeBall();
     }
 
     private void FixedUpdate()
@@ -309,7 +322,7 @@ public class GolfBallController : MonoBehaviour
         if (rb == null)
             return;
 
-        float actualForce = currentPowerPercent * maxShotForce;
+        float actualForce = currentPowerPercent * maxShotForce * ballPower;
 
         rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
 

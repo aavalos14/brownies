@@ -835,6 +835,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 76850146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &227135585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2569493420809074820, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+  m_PrefabInstance: {fileID: 5434760617225070669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &232657658
 GameObject:
   m_ObjectHideFlags: 0
@@ -35643,7 +35648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1216135827594550429, guid: 3043349b96c66974ab2072b518813e15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.7
+      value: -14.86
       objectReference: {fileID: 0}
     - target: {fileID: 1216135827594550429, guid: 3043349b96c66974ab2072b518813e15, type: 3}
       propertyPath: m_LocalPosition.y
@@ -35798,6 +35803,14 @@ PrefabInstance:
       propertyPath: itemImage
       value: 
       objectReference: {fileID: 1576158608}
+    - target: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: shopButton
+      value: 
+      objectReference: {fileID: 227135585}
+    - target: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: golfBallController
+      value: 
+      objectReference: {fileID: 380669589}
     - target: {fileID: 3068301717332185482, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_Name
       value: Power Text
@@ -35805,6 +35818,34 @@ PrefabInstance:
     - target: {fileID: 5303070695229079065, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
       propertyPath: m_Name
       value: Cost Label
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5434760617225070671}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896920134168287447, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35816,6 +35857,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2517160064026333805, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
   m_PrefabInstance: {fileID: 5434760617225070669}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5434760617225070671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2835637758931469150, guid: aaf4d5b8ee8ea6f4cab0dc4d0c9bc453, type: 3}
+  m_PrefabInstance: {fileID: 5434760617225070669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227135585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e433fa76e5dbe849a5bcf49878fb1bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopButton
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
