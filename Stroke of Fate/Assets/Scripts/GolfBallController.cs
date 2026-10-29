@@ -8,6 +8,7 @@ public class GolfBallController : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Slider powerSlider;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private TMP_Text powerText;
@@ -19,6 +20,8 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
+    [SerializeField] private BallData ballData;
+    [SerializeField] private Bunker bunkerScript;
 
     private LevelManager levelManager;
     private bool ballCaptured;
@@ -44,13 +47,21 @@ public class GolfBallController : MonoBehaviour
 
     [Header("Bunker Settings")]
     [SerializeField] private bool allowBunkerEffects = true;
-
     private void Start()
     {
         if (lineRenderer != null)
         {
             lineRenderer.enabled = false;
         }
+        InitializeBall();
+    }
+    public void InitializeBall()
+    {
+        if (ballData == null) return;
+
+        spriteRenderer.sprite = ballData.ballSprite;
+        maxShotForce *= ballData.power;
+        bunkerScript.speedMultiplier = ballData.traction;
     }
 
     private void FixedUpdate()
@@ -98,89 +109,13 @@ public class GolfBallController : MonoBehaviour
             return;
         }
 
-        if (Mouse.current == null)
-            return;
-
-        // Aim toward the mouse.
-        Vector2 mouseScreenPos =
-            Mouse.current.position.ReadValue();
-
-        Vector3 mouseWorldPos =
-            Camera.main.ScreenToWorldPoint(
-                new Vector3(
-                    mouseScreenPos.x,
-                    mouseScreenPos.y,
-                    Camera.main.nearClipPlane
-                )
-            );
-
-        shotDirection =
-            ((Vector2)mouseWorldPos -
-            (Vector2)transform.position).normalized;
-
-        // Update the aiming line.
-        if (lineRenderer != null)
-        {
-            float currentAimLineLength =
-                aimLineLength * currentPowerPercent;
-
-            lineRenderer.enabled = true;
-
-            lineRenderer.SetPosition(0, transform.position);
-
-            lineRenderer.SetPosition(
-                1,
-                transform.position +
-                (Vector3)(shotDirection * currentAimLineLength)
-            );
-
-            lineRenderer.material.mainTextureScale =
-                new Vector2(currentAimLineLength * 2f, 1f);
-        }
-
-        // Handle Spacebar input.
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                if (shopUI != null && shopUI.activeSelf)
-                    return;
-
-                isCharging = true;
-            }
-
-            if (isCharging)
-            {
-                currentPowerPercent =
-                    Mathf.PingPong(
-                        Time.time * powerOscillationSpeed,
-                        0.99f
-                    ) + 0.01f;
-
-                UpdateSliderUI();
-
-                if (powerSlider != null)
-                    powerSlider.value = currentPowerPercent;
-
-                if (Keyboard.current.spaceKey.wasReleasedThisFrame)
-                {
-                    ShootBall();
-
-                    if (hitBallAudioSource != null && hitBall != null)
-                    {
-                        hitBallAudioSource.PlayOneShot(hitBall);
-                    }
-
-                    isCharging = false;
-                }
-            }
-        }
+        HandleAiming();
+        HandleAimingLine();
+        HandleShot();
     }
 
     // BUNKER EFFECT
-    public void ApplyBunkerEffect(
-        float speedMultiplier,
-        float maxAngle)
+    public void ApplyBunkerEffect(float speedMultiplier)
     {
         if (!allowBunkerEffects ||
             rb == null ||
@@ -192,17 +127,17 @@ public class GolfBallController : MonoBehaviour
 
         // Reduce the ball's current velocity.
         rb.linearVelocity *= speedMultiplier;
-
-        // Apply a small random direction change.
-        float angle = Random.Range(-maxAngle, maxAngle);
-
-        rb.linearVelocity =
-            Quaternion.Euler(0f, 0f, angle) *
-            rb.linearVelocity;
-
         // Keep the existing slowdown system consistent
         // with the new velocity.
         startingVelocity = rb.linearVelocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) // Ball Bounciness Effect
+    {
+        if (collision.gameObject.CompareTag("Walls"))
+        {
+            rb.linearVelocity += ballData.bounciness * collision.relativeVelocity;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -245,6 +180,84 @@ public class GolfBallController : MonoBehaviour
         Invoke(nameof(ExitLevel), 3f);
     }
 
+    private void HandleAiming()
+    {
+        Vector2 mouseScreenPos =
+            Mouse.current.position.ReadValue();
+
+        Vector3 mouseWorldPos =
+            Camera.main.ScreenToWorldPoint(
+                new Vector3(
+                    mouseScreenPos.x,
+                    mouseScreenPos.y,
+                    Camera.main.nearClipPlane
+                )
+            );
+
+        shotDirection =
+            ((Vector2)mouseWorldPos -
+            (Vector2)transform.position).normalized;
+    }
+    private void HandleAimingLine()
+    {
+        if (lineRenderer != null)
+        {
+            float currentAimLineLength =
+                aimLineLength * currentPowerPercent;
+
+            lineRenderer.enabled = true;
+
+            lineRenderer.SetPosition(0, transform.position);
+
+            lineRenderer.SetPosition(
+                1,
+                transform.position +
+                (Vector3)(shotDirection * currentAimLineLength)
+            );
+
+            lineRenderer.material.mainTextureScale =
+                new Vector2(currentAimLineLength * 2f, 1f);
+        }
+    }
+    private void HandleShot()
+    {
+        if (Keyboard.current != null)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                if (shopUI != null && shopUI.activeSelf)
+                    return;
+
+                isCharging = true;
+            }
+
+            if (isCharging)
+            {
+                currentPowerPercent =
+                    Mathf.PingPong(
+                        Time.time * powerOscillationSpeed,
+                        0.99f
+                    ) + 0.01f;
+
+                UpdateSliderUI();
+
+                if (powerSlider != null)
+                    powerSlider.value = currentPowerPercent;
+
+                if (Keyboard.current.spaceKey.wasReleasedThisFrame)
+                {
+                    ShootBall();
+
+                    if (hitBallAudioSource != null && hitBall != null)
+                    {
+                        hitBallAudioSource.PlayOneShot(hitBall);
+                    }
+
+                    isCharging = false;
+                }
+            }
+        }
+    }
     private void ExitLevel()
     {
         if (shopUI != null)
@@ -296,16 +309,11 @@ public class GolfBallController : MonoBehaviour
         if (rb == null)
             return;
 
-        if (logicScript != null)
-            logicScript.AddStroke();
+        float actualForce = currentPowerPercent * maxShotForce;
 
-        float actualForce =
-            currentPowerPercent * maxShotForce;
+        rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
 
-        rb.AddForce(
-            shotDirection * actualForce,
-            ForceMode2D.Impulse
-        );
+        logicScript.AddStroke();
 
         puttTimer = 0f;
         startingVelocity = rb.linearVelocity;

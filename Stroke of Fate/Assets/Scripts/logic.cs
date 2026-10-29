@@ -38,18 +38,25 @@ public class logic : MonoBehaviour
     {
         if (strokeText != null)
         {
-            strokeText.text = "Stroke: " + stroke;
             if (stroke == 4)
             {
                 strokeText.color = Color.yellow;
+                strokeText.text = "Stroke: " + stroke;
             }
-            else if (stroke >= 5)
+            else if (stroke == 5)
             {
                 strokeText.color = Color.red;
+                strokeText.text = "Stroke: 5";
+            }
+            else if (stroke > 5)
+            {
+                strokeText.color = Color.red;
+                strokeText.text = "Stroke: 5+";
             }
             else
             {
                 strokeText.color = Color.white;
+                strokeText.text = "Stroke: " + stroke;
             }
         }
     }
