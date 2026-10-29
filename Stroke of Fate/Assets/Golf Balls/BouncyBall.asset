@@ -18,5 +18,5 @@ MonoBehaviour:
   canBePurchased: 1
   shopCost: 2
   power: 1
-  bounciness: 0.5
+  bounciness: 3
   traction: 0.5

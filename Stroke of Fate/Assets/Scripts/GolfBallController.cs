@@ -27,12 +27,17 @@ public class GolfBallController : MonoBehaviour
     private bool ballCaptured;
     private bool betweenLevels = false;
     private float ballPower = 1f;
+    private float wallBounceVelocityAdder = 1f;
+    private float nextWallBounceTime;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
     [SerializeField] private float powerOscillationSpeed = 2f;
     [SerializeField] private float slowDownTime = 3f;
     [SerializeField] private float aimLineLength = 10f;
+
+    [Header("Wall Bounce Settings")]
+    [SerializeField] private float wallBounceCooldown = 3f;
 
     private float puttTimer = 0f;
     private Vector2 startingVelocity;
@@ -63,6 +68,7 @@ public class GolfBallController : MonoBehaviour
         spriteRenderer.sprite = ballData.ballSprite;
         ballPower = ballData.power;
         bunkerScript.speedMultiplier = ballData.traction;
+        wallBounceVelocityAdder = ballData.bounciness;
     }
 
     public void SetBallData(BallData newBallData)
@@ -149,7 +155,8 @@ public class GolfBallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Walls"))
         {
-            rb.linearVelocity += ballData.bounciness * collision.relativeVelocity;
+            //Add wallBounceVelocityAdder to the current velocity of the ball
+            rb.linearVelocity += rb.linearVelocity.normalized * wallBounceVelocityAdder;
         }
     }
 
