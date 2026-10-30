@@ -11,7 +11,7 @@ public class BallData : ScriptableObject
     public int shopCost = 2;
     [Header("Stats")]
     public float power = 1f; // Multiplier for shot force
-    public float bounciness = 0f; // Additional velocity added after hitting a surface
+    public float bounciness = 0f; // velocity multiplier when bouncing off walls
     public float traction = 0.5f; // Bunker friction multiplier
     // public float magnetism = 0f; // Units away the ball can be pulled towards the hole when near it
     // public int resists = 0; // Number of times the ball can resist obstacles

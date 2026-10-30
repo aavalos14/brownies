@@ -26,12 +26,18 @@ public class GolfBallController : MonoBehaviour
     private LevelManager levelManager;
     private bool ballCaptured;
     private bool betweenLevels = false;
+    private float ballPower = 1f;
+    private float wallBounceVelocityAdder = 1f;
+    private float nextWallBounceTime;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
     [SerializeField] private float powerOscillationSpeed = 2f;
     [SerializeField] private float slowDownTime = 3f;
     [SerializeField] private float aimLineLength = 10f;
+
+    [Header("Wall Bounce Settings")]
+    [SerializeField] private float wallBounceCooldown = 3f;
 
     private float puttTimer = 0f;
     private Vector2 startingVelocity;
@@ -60,8 +66,21 @@ public class GolfBallController : MonoBehaviour
         if (ballData == null) return;
 
         spriteRenderer.sprite = ballData.ballSprite;
-        maxShotForce *= ballData.power;
+        ballPower = ballData.power;
         bunkerScript.speedMultiplier = ballData.traction;
+        wallBounceVelocityAdder = ballData.bounciness;
+    }
+
+    public void SetBallData(BallData newBallData)
+    {
+        if (newBallData == null)
+        {
+            Debug.LogError("Cannot set the active ball because the BallData is null.", this);
+            return;
+        }
+
+        ballData = newBallData;
+        InitializeBall();
     }
 
     private void FixedUpdate()
@@ -136,7 +155,8 @@ public class GolfBallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Walls"))
         {
-            rb.linearVelocity += ballData.bounciness * collision.relativeVelocity;
+            //Add wallBounceVelocityAdder to the current velocity of the ball
+            rb.linearVelocity += rb.linearVelocity.normalized * wallBounceVelocityAdder;
         }
     }
 
@@ -310,7 +330,7 @@ public class GolfBallController : MonoBehaviour
         if (rb == null)
             return;
 
-        float actualForce = currentPowerPercent * maxShotForce;
+        float actualForce = currentPowerPercent * maxShotForce * ballPower;
 
         rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
 
