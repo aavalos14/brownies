@@ -152,13 +152,7 @@ public class GolfBallController : MonoBehaviour
 
         if (logicScript != null)
         {
-            logicScript.AddScore(1000);
-
-            if (scoreText != null)
-            {
-                scoreText.text =
-                    "Score: " + logicScript.GetScore().ToString();
-            }
+            logicScript.CompleteHole(scoreText);
         }
 
         if (hitHoleAudioSource != null && hitHole != null)
@@ -264,7 +258,14 @@ public class GolfBallController : MonoBehaviour
             shopUI.SetActive(true);
 
         if (logicScript != null)
+        {
             logicScript.ResetStrokes();
+            ShopManager shopManager = FindAnyObjectByType<ShopManager>();
+            if (shopManager != null)
+            {
+                shopManager.ShowHoleReward(logicScript);
+            }
+        }
 
         if (instructionText != null)
             instructionText.SetActive(false);
@@ -313,7 +314,11 @@ public class GolfBallController : MonoBehaviour
 
         rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
 
-        logicScript.AddStroke();
+        if (logicScript != null)
+        {
+            logicScript.AddStroke();
+            logicScript.UpdateScoreDisplay(scoreText);
+        }
 
         puttTimer = 0f;
         startingVelocity = rb.linearVelocity;

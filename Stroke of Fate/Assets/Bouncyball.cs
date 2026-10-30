@@ -155,11 +155,7 @@ public class Bouncyball : MonoBehaviour
 
         if (logicScript != null)
         {
-            logicScript.AddScore(1000); // Add 1000 points for sinking the ball
-            if (scoreText != null)
-            {
-                scoreText.text = "Score: " + logicScript.GetScore().ToString();
-            }
+            logicScript.CompleteHole(scoreText);
         }
 
         if (hitHoleAudioSource != null && hitHole != null)
@@ -180,6 +176,12 @@ public class Bouncyball : MonoBehaviour
     private void ExitLevel()
     {
         shopUI.SetActive(true);
+        ShopManager shopManager = FindAnyObjectByType<ShopManager>();
+        if (shopManager != null)
+        {
+            shopManager.ShowHoleReward(logicScript);
+        }
+
         if (instructionText != null)
         {
             instructionText.SetActive(false);
@@ -206,7 +208,12 @@ public class Bouncyball : MonoBehaviour
     }
     private void ShootBall()
     {
-        logicScript.AddStroke();
+        if (logicScript != null)
+        {
+            logicScript.AddStroke();
+            logicScript.UpdateScoreDisplay(scoreText);
+        }
+
         float actualForce = currentPowerPercent * maxShotForce;
         rb.AddForce(shotDirection * actualForce, ForceMode2D.Impulse);
         puttTimer = 0f;
