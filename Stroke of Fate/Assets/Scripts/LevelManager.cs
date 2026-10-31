@@ -1,9 +1,12 @@
 using UnityEngine;
+using FMODUnity;
 
 public class LevelManager : MonoBehaviour
 {
     public GameObject[] levels; // Assign Level_1, Level_2, etc., here in the Inspector
     private int currentLevelIndex = 0;
+    [SerializeField] private StudioEventEmitter eventEmitter;
+    [SerializeField] private string levelsCompleted = "Levels Completed";
 
     public void LoadLevel(int index)
     {
@@ -25,6 +28,7 @@ public class LevelManager : MonoBehaviour
     public void CompleteCurrentLevel()
     {
         int nextLevelIndex = currentLevelIndex + 1;
+        eventEmitter.SetParameter(levelsCompleted, nextLevelIndex);
 
         if (nextLevelIndex < levels.Length)
         {
