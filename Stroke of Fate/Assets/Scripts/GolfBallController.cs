@@ -13,31 +13,25 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private TMP_Text powerText;
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private AudioSource hitBallAudioSource;
-    [SerializeField] private AudioSource hitHoleAudioSource;
-    [SerializeField] private AudioClip hitBall;
-    [SerializeField] private AudioClip hitHole;
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
     [SerializeField] private BallData ballData;
     [SerializeField] private Bunker bunkerScript;
-
+    [SerializeField] private FMODUnity.EventReference wallCollisionEvent;
+    [SerializeField] private FMODUnity.EventReference shotEvent;
+    [SerializeField] private FMODUnity.EventReference holeCollisionEvent;
     private LevelManager levelManager;
     private bool ballCaptured;
     private bool betweenLevels = false;
     private float ballPower = 1f;
-    private float wallBounceVelocityAdder = 1f;
-    private float nextWallBounceTime;
+    private float wallVelocityMultiplier = 1f;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
     [SerializeField] private float powerOscillationSpeed = 2f;
     [SerializeField] private float slowDownTime = 3f;
     [SerializeField] private float aimLineLength = 10f;
-
-    [Header("Wall Bounce Settings")]
-    [SerializeField] private float wallBounceCooldown = 3f;
 
     private float puttTimer = 0f;
     private Vector2 startingVelocity;
@@ -68,7 +62,7 @@ public class GolfBallController : MonoBehaviour
         spriteRenderer.sprite = ballData.ballSprite;
         ballPower = ballData.power;
         bunkerScript.speedMultiplier = ballData.traction;
-        wallBounceVelocityAdder = ballData.bounciness;
+        wallVelocityMultiplier = ballData.bounciness;
     }
 
     public void SetBallData(BallData newBallData)
@@ -155,8 +149,9 @@ public class GolfBallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Walls"))
         {
-            //Add wallBounceVelocityAdder to the current velocity of the ball
-            rb.linearVelocity += rb.linearVelocity.normalized * wallBounceVelocityAdder;
+            //Add wallVelocityMultiplier to the current velocity of the ball
+            rb.linearVelocity += rb.linearVelocity.normalized * wallVelocityMultiplier;
+            FMODUnity.RuntimeManager.PlayOneShot(wallCollisionEvent, transform.position);
         }
     }
 
@@ -169,6 +164,7 @@ public class GolfBallController : MonoBehaviour
             return;
 
         ballCaptured = true;
+        FMODUnity.RuntimeManager.PlayOneShot(holeCollisionEvent, transform.position);
 
         if (logicScript != null)
         {
@@ -179,11 +175,6 @@ public class GolfBallController : MonoBehaviour
                 scoreText.text =
                     "Score: " + logicScript.GetScore().ToString();
             }
-        }
-
-        if (hitHoleAudioSource != null && hitHole != null)
-        {
-            hitHoleAudioSource.PlayOneShot(hitHole);
         }
 
         if (lineRenderer != null)
@@ -268,11 +259,6 @@ public class GolfBallController : MonoBehaviour
                 {
                     ShootBall();
 
-                    if (hitBallAudioSource != null && hitBall != null)
-                    {
-                        hitBallAudioSource.PlayOneShot(hitBall);
-                    }
-
                     isCharging = false;
                 }
             }
@@ -332,6 +318,7 @@ public class GolfBallController : MonoBehaviour
         float actualForce = currentPowerPercent * maxShotForce * ballPower;
 
         rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
+        FMODUnity.RuntimeManager.PlayOneShot(shotEvent, transform.position);
 
         logicScript.AddStroke();
 

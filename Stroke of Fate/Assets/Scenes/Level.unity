@@ -1479,20 +1479,36 @@ MonoBehaviour:
   lineRenderer: {fileID: 380669590}
   powerText: {fileID: 1949168888}
   scoreText: {fileID: 433235019}
-  hitBallAudioSource: {fileID: 0}
-  hitHoleAudioSource: {fileID: 0}
-  hitBall: {fileID: 8300000, guid: 06b0a317beee3d6469911563bec36eb1, type: 3}
-  hitHole: {fileID: 8300000, guid: 0c65408cf654fc84188214cc1427f9c4, type: 3}
   shopUI: {fileID: 78218739}
   instructionText: {fileID: 1297634522}
   logicScript: {fileID: 1836141182}
   ballData: {fileID: 11400000, guid: 54ccc7761d4d44b4e9ae7aff32265597, type: 2}
   bunkerScript: {fileID: 451847699}
+  wallCollisionEvent:
+    Guid:
+      Data1: 730175498
+      Data2: 1313214372
+      Data3: 1626998939
+      Data4: 235954370
+    Path: event:/Wall Collision
+  shotEvent:
+    Guid:
+      Data1: 142751334
+      Data2: 1298074505
+      Data3: 1933928601
+      Data4: 1345502590
+    Path: event:/Shot
+  holeCollisionEvent:
+    Guid:
+      Data1: 1805703274
+      Data2: 1219243651
+      Data3: -1161986649
+      Data4: 2134582084
+    Path: event:/Hole Collision
   maxShotForce: 30
   powerOscillationSpeed: 2
   slowDownTime: 3
   aimLineLength: 10
-  wallBounceCooldown: 3
   sliderFillImage: {fileID: 1506407075}
   powerBarGradient:
     serializedVersion: 2
