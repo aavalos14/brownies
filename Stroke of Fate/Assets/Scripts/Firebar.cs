@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
 public class FlameObstacle : MonoBehaviour
 {
     [Header("Flame Settings")]
@@ -11,28 +10,19 @@ public class FlameObstacle : MonoBehaviour
     [SerializeField] private float holdTime = 1f;
     [SerializeField] private float retractTime = 0.5f;
     [SerializeField] private float delayBetweenBursts = 1f;
-    [SerializeField] private float flameWidth = 0.6f;
+
+    [Header("Particle Settings")]
+    [SerializeField] private ParticleSystem flameParticles;
 
     [Header("Detection")]
-    [SerializeField] private LayerMask ballLayer = ~0;
+    [SerializeField] private LayerMask ballLayer;
 
-    private LineRenderer flameLine;
     private bool ballHit;
-    private bool flameActive;
-
-    private void Awake()
-    {
-        flameLine = GetComponent<LineRenderer>();
-
-        flameLine.useWorldSpace = true;
-        flameLine.positionCount = 2;
-        flameLine.startWidth = 0f;
-        flameLine.endWidth = 0f;
-        flameLine.enabled = false;
-    }
+    private float currentLength;
 
     private void Start()
     {
+        flameParticles.Stop();
         StartCoroutine(FlameRoutine());
     }
 
@@ -40,9 +30,8 @@ public class FlameObstacle : MonoBehaviour
     {
         while (true)
         {
-            // Gradually extend the flame.
-            flameActive = true;
-            flameLine.enabled = true;
+            // Extend flame
+            flameParticles.Play();
 
             float timer = 0f;
 
@@ -51,31 +40,29 @@ public class FlameObstacle : MonoBehaviour
                 timer += Time.deltaTime;
 
                 float progress = Mathf.Clamp01(timer / extendTime);
-                float length = Mathf.Lerp(0f, maxLength, progress);
+                currentLength = Mathf.Lerp(0f, maxLength, progress);
 
-                UpdateFlame(length);
-                CheckForBall(length);
+                UpdateFlame();
+                CheckForBall();
 
                 yield return null;
             }
 
-            UpdateFlame(maxLength);
-            CheckForBall(maxLength);
-
-            // Keep the flame extended.
+            // Hold flame
+            currentLength = maxLength;
             timer = 0f;
 
             while (timer < holdTime)
             {
                 timer += Time.deltaTime;
 
-                UpdateFlame(maxLength);
-                CheckForBall(maxLength);
+                UpdateFlame();
+                CheckForBall();
 
                 yield return null;
             }
 
-            // Gradually retract the flame.
+            // Retract flame
             timer = 0f;
 
             while (timer < retractTime)
@@ -83,40 +70,39 @@ public class FlameObstacle : MonoBehaviour
                 timer += Time.deltaTime;
 
                 float progress = Mathf.Clamp01(timer / retractTime);
-                float length = Mathf.Lerp(maxLength, 0f, progress);
+                currentLength = Mathf.Lerp(maxLength, 0f, progress);
 
-                UpdateFlame(length);
-                CheckForBall(length);
+                UpdateFlame();
+                CheckForBall();
 
                 yield return null;
             }
 
-            flameActive = false;
-            flameLine.enabled = false;
+            flameParticles.Stop();
+            currentLength = 0f;
             ballHit = false;
 
             yield return new WaitForSeconds(delayBetweenBursts);
         }
     }
 
-    private void UpdateFlame(float length)
+    private void UpdateFlame()
     {
-        Vector2 origin = transform.position;
-        Vector2 direction = transform.right;
+        // Gradually change the particle emission distance.
+        var shape = flameParticles.shape;
+        shape.radius = 0.1f;
 
-        flameLine.SetPosition(0, origin);
-        flameLine.SetPosition(1, origin + direction * length);
+        var main = flameParticles.main;
+        main.startSpeed = currentLength / Mathf.Max(extendTime, 0.01f);
 
-        // The flame becomes wider as it extends.
-        float width = flameWidth * (length / maxLength);
-
-        flameLine.startWidth = width;
-        flameLine.endWidth = width * 0.7f;
+        // Scale the particle system as the flame extends.
+        flameParticles.transform.localScale =
+            new Vector3(currentLength / maxLength, 1f, 1f);
     }
 
-    private void CheckForBall(float length)
+    private void CheckForBall()
     {
-        if (ballHit || length <= 0f)
+        if (ballHit || currentLength <= 0f)
             return;
 
         Vector2 origin = transform.position;
@@ -124,9 +110,9 @@ public class FlameObstacle : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.CircleCast(
             origin,
-            flameLine.endWidth * 0.5f,
+            0.3f,
             direction,
-            length,
+            currentLength,
             ballLayer
         );
 
@@ -138,8 +124,7 @@ public class FlameObstacle : MonoBehaviour
 
         if (player == null)
         {
-            player = hit.collider
-                .GetComponentInParent<PlayerLastPosition>();
+            player = hit.collider.GetComponentInParent<PlayerLastPosition>();
         }
 
         if (player != null)
@@ -149,4 +134,3 @@ public class FlameObstacle : MonoBehaviour
         }
     }
 }
-
