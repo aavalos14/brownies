@@ -5,6 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject[] levels; // Assign Level_1, Level_2, etc., here in the Inspector
     private int currentLevelIndex = 0;
+    public int par = 5; // Default par value, can be adjusted per level if needed
     [SerializeField] private StudioEventEmitter eventEmitter;
     [SerializeField] private string levelsCompleted = "Levels Completed";
 

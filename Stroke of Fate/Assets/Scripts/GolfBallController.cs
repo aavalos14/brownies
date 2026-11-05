@@ -15,11 +15,11 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
+    [SerializeField] private LevelManager levelManager;
     [SerializeField] private BallData ballData;
     [SerializeField] private FMODUnity.EventReference wallCollisionEvent;
     [SerializeField] private FMODUnity.EventReference shotEvent;
     [SerializeField] private FMODUnity.EventReference holeCollisionEvent;
-    private LevelManager levelManager;
     private bool ballCaptured;
     private bool betweenLevels = false;
     private float ballPower = 1f;
@@ -166,7 +166,8 @@ public class GolfBallController : MonoBehaviour
 
         if (logicScript != null)
         {
-            logicScript.AddScore(1000);
+            HandleAddingScore();
+            logicScript.UpdateBirdText();
         }
 
         if (lineRenderer != null)
@@ -181,6 +182,32 @@ public class GolfBallController : MonoBehaviour
         rb.angularVelocity = 0f;
 
         Invoke(nameof(ExitLevel), 3f);
+    }
+    private void HandleAddingScore()
+    {
+        int holeScore;
+
+        if (levelManager.par - logicScript.stroke == 0)
+        {
+            holeScore = 1000;
+        }
+        else if (levelManager.par - logicScript.stroke == 1)
+        {
+            holeScore = 2000;
+        }
+        else if (levelManager.par - logicScript.stroke == 2)
+        {
+            holeScore = 3000;
+        }
+        else if (levelManager.par - logicScript.stroke >= 3)
+        {
+            holeScore = 4000;
+        }
+        else
+        {
+            holeScore = 0;
+        }
+        logicScript.AddScore(holeScore);
     }
 
     private void HandleAiming()
@@ -265,6 +292,7 @@ public class GolfBallController : MonoBehaviour
         {
             logicScript.ResetStrokes();
             logicScript.AddHole();
+            logicScript.RemoveBirdText();
         }
 
         if (instructionText != null)
