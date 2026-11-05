@@ -16,7 +16,6 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
     [SerializeField] private BallData ballData;
-    [SerializeField] private Bunker bunkerScript;
     [SerializeField] private FMODUnity.EventReference wallCollisionEvent;
     [SerializeField] private FMODUnity.EventReference shotEvent;
     [SerializeField] private FMODUnity.EventReference holeCollisionEvent;
@@ -60,7 +59,6 @@ public class GolfBallController : MonoBehaviour
 
         spriteRenderer.sprite = ballData.ballSprite;
         ballPower = ballData.power;
-        bunkerScript.speedMultiplier = ballData.traction;
         wallVelocityMultiplier = ballData.bounciness;
     }
 
@@ -127,10 +125,11 @@ public class GolfBallController : MonoBehaviour
     }
 
     // BUNKER EFFECT
-    public void ApplyBunkerEffect(float speedMultiplier)
+    public void ApplyBunkerEffect()
     {
         if (!allowBunkerEffects ||
             rb == null ||
+            ballData == null ||
             ballCaptured ||
             betweenLevels)
         {
@@ -138,7 +137,7 @@ public class GolfBallController : MonoBehaviour
         }
 
         // Reduce the ball's current velocity.
-        rb.linearVelocity *= speedMultiplier;
+        rb.linearVelocity *= ballData.traction;
         // Keep the existing slowdown system consistent
         // with the new velocity.
         startingVelocity = rb.linearVelocity;
