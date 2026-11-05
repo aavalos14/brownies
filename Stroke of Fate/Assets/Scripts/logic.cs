@@ -2,10 +2,31 @@ using UnityEngine;
 using TMPro;
 public class logic : MonoBehaviour
 {
+    [Header("Assets")]
     public LevelManager levelManager;
+
     [Header("Score")]
-    private int score;
+    public int score;
     [SerializeField] private TMP_Text scoreText;
+
+    [Header("Stroke")]
+    public int stroke = 1;
+
+    [SerializeField] private TMP_Text strokeText;
+
+    [Header("Hole")]
+    public int hole = 1;
+    [SerializeField] private TMP_Text holeText;
+
+    [Header("Bird")]
+    [SerializeField] private TMP_Text BirdText;
+    [SerializeField] private TMP_Text BirdScoreText;
+    [SerializeField] private GameObject BirdTextObject;
+
+    [Header("Gold")]
+    public int gold = 0;
+    [SerializeField] private TMP_Text goldText;
+    [SerializeField] private TMP_Text IncomeText;
     void Start()
     {
         score = 0;
@@ -27,11 +48,6 @@ public class logic : MonoBehaviour
     {
         return score;
     }
-    [Header("Stroke")]
-    public int stroke = 1;
-
-    [SerializeField] private TMP_Text strokeText;
-
     // Call this every time the ball is hit
     public void AddStroke()
     {
@@ -73,9 +89,6 @@ public class logic : MonoBehaviour
             }
         }
     }
-    [Header("Hole")]
-    private int hole = 1;
-    [SerializeField] private TMP_Text holeText;
     public void AddHole()
     {
         hole++;
@@ -88,10 +101,6 @@ public class logic : MonoBehaviour
             holeText.text = "Hole #" + hole;
         }
     }
-    [Header("Bird")]
-    [SerializeField] private TMP_Text BirdText;
-    [SerializeField] private TMP_Text BirdScoreText;
-    [SerializeField] private GameObject BirdTextObject;
     public void UpdateBirdText()
     {
         BirdTextObject.SetActive(true);
@@ -135,5 +144,22 @@ public class logic : MonoBehaviour
     public void RemoveBirdText()
     {
         BirdTextObject.SetActive(false);
+    }
+
+    public void AddGold(int goldToAdd)
+    {
+        gold += goldToAdd;
+        UpdateGoldText();
+    }
+    public void UpdateGoldText()
+    {
+        if (goldText != null)
+        {
+            goldText.text = "Gold: " + gold;
+        }
+    }
+    public void UpdateIncomeText(int incomeValue)
+    {
+        IncomeText.text = "Income: " + incomeValue;
     }
 }

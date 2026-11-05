@@ -15,7 +15,7 @@ public class BallData : ScriptableObject
     public float traction = 0.5f; // Bunker friction multiplier
     // public float magnetism = 0f; // Units away the ball can be pulled towards the hole when near it
     // public int resists = 0; // Number of times the ball can resist obstacles
-    // public int income = 5; // Amount of in-game currency earned per hole with this ball
+    public int income = 5; // Amount of in-game currency earned per hole with this ball
     // public bool allowMulligans = false; // Whether the ball allows for mulligans
     // public int mulliganCost = 0; // Cost of a mulligan for this ball
 }

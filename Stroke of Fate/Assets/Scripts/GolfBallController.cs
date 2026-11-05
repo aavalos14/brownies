@@ -16,6 +16,8 @@ public class GolfBallController : MonoBehaviour
     [SerializeField] private GameObject instructionText;
     [SerializeField] private logic logicScript;
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] private ShopButtonController shopButtonController;
+    [SerializeField] private GameObject[] shopButtons;
     [SerializeField] private BallData ballData;
     [SerializeField] private FMODUnity.EventReference wallCollisionEvent;
     [SerializeField] private FMODUnity.EventReference shotEvent;
@@ -24,6 +26,7 @@ public class GolfBallController : MonoBehaviour
     private bool betweenLevels = false;
     private float ballPower = 1f;
     private float wallVelocityMultiplier = 1f;
+    private int ballIncome = 0;
 
     [Header("Shot Settings")]
     [SerializeField] private float maxShotForce = 30f;
@@ -60,6 +63,7 @@ public class GolfBallController : MonoBehaviour
         spriteRenderer.sprite = ballData.ballSprite;
         ballPower = ballData.power;
         wallVelocityMultiplier = ballData.bounciness;
+        ballIncome = ballData.income;
     }
 
     public void SetBallData(BallData newBallData)
@@ -167,7 +171,9 @@ public class GolfBallController : MonoBehaviour
         if (logicScript != null)
         {
             HandleAddingScore();
+            logicScript.AddGold(ballIncome);
             logicScript.UpdateBirdText();
+            logicScript.UpdateIncomeText(ballIncome);
         }
 
         if (lineRenderer != null)
@@ -287,6 +293,8 @@ public class GolfBallController : MonoBehaviour
     {
         if (shopUI != null)
             shopUI.SetActive(true);
+            shopButtonController.ActivateShopButtons(shopButtons);
+
 
         if (logicScript != null)
         {

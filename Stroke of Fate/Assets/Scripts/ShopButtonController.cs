@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class ShopButton : MonoBehaviour
+public class ShopButtonController : MonoBehaviour
 {
     public BallData itemSO;
     public GolfBallController golfBallController;
-    public GameObject shopButton;
-
+    [SerializeField] private logic logicScript;
+    [SerializeField] private GameObject shopUI;
     public void Initialized(BallData newBallData) //fill place up with info
     {
         itemSO = newBallData;
@@ -24,8 +24,19 @@ public class ShopButton : MonoBehaviour
             Debug.LogError("Cannot equip this shop item because its GolfBallController is not assigned.", this);
             return;
         }
+        logicScript.AddGold(-itemSO.shopCost);
+        logicScript.UpdateIncomeText(itemSO.income);
 
         golfBallController.SetBallData(itemSO);
-        shopButton.SetActive(false);
+        
+        gameObject.SetActive(false);
+    }
+    //reactivate the shop buttons when the shop is opened again
+    public void ActivateShopButtons(GameObject[] shopButtons)
+    {
+        foreach (GameObject button in shopButtons)
+        {
+            button.SetActive(true);
+        }
     }
 }
