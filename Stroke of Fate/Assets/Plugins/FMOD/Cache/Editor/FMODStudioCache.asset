@@ -70,7 +70,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639294635569885459
+  lastModified: 639291467190942600
   FileSizes:
   - Name: 
     Value: 1074
@@ -141,7 +141,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Strokes.bank
   Name: Strokes
   StudioPath: bank:/Strokes
-  lastModified: 639294635571404435
+  lastModified: 639291467192516016
   FileSizes: []
   Exists: 1
 --- !u!114 &-1149141834997877857
@@ -159,7 +159,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639294635569885459
+  lastModified: 639291467190932616
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -190,7 +190,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7119907114037535569}
   cacheVersion: 131860
-  cacheTime: 639294635571404435
+  cacheTime: 639291467192516016
   SerializableEventsDict:
   - key: event:/Level Soundtracks
     index: 0

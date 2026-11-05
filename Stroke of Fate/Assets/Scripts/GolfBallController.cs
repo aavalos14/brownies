@@ -143,7 +143,7 @@ public class GolfBallController : MonoBehaviour
         startingVelocity = rb.linearVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // Ball Bounciness Effect
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Walls"))
         {
@@ -167,12 +167,6 @@ public class GolfBallController : MonoBehaviour
         if (logicScript != null)
         {
             logicScript.AddScore(1000);
-
-            if (scoreText != null)
-            {
-                scoreText.text =
-                    "Score: " + logicScript.GetScore().ToString();
-            }
         }
 
         if (lineRenderer != null)
@@ -268,7 +262,10 @@ public class GolfBallController : MonoBehaviour
             shopUI.SetActive(true);
 
         if (logicScript != null)
+        {
             logicScript.ResetStrokes();
+            logicScript.AddHole();
+        }
 
         if (instructionText != null)
             instructionText.SetActive(false);
@@ -318,8 +315,6 @@ public class GolfBallController : MonoBehaviour
         rb.AddForce(shotDirection * actualForce,ForceMode2D.Impulse);
         FMODUnity.RuntimeManager.PlayOneShot(shotEvent, transform.position);
 
-        logicScript.AddStroke();
-
         puttTimer = 0f;
         startingVelocity = rb.linearVelocity;
         isSlowingDown = true;
@@ -328,6 +323,14 @@ public class GolfBallController : MonoBehaviour
 
         if (lineRenderer != null)
             lineRenderer.enabled = false;
+
+        //if ball is in hole, return, otherwise add stroke
+        Invoke(nameof(AddStrokeIfNotInHole), 3f);
+    }
+    private void AddStrokeIfNotInHole()
+    {
+        if (logicScript != null && !ballCaptured)
+            logicScript.AddStroke();
     }
 
     private void UpdateSliderUI()

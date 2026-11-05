@@ -2,22 +2,34 @@ using UnityEngine;
 using TMPro;
 public class logic : MonoBehaviour
 {
-    public int score;
+    [Header("Score")]
+    private int score;
+    [SerializeField] private TMP_Text scoreText;
     void Start()
     {
         score = 0;
+        UpdateScoreText();
     }
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        UpdateScoreText();
+    }
+    private void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
     public int GetScore()
     {
         return score;
     }
-      public int stroke = 1;
+    [Header("Stroke")]
+    private int stroke = 1;
 
-    public TMP_Text strokeText;
+    [SerializeField] private TMP_Text strokeText;
 
     // Call this every time the ball is hit
     public void AddStroke()
@@ -58,6 +70,21 @@ public class logic : MonoBehaviour
                 strokeText.color = Color.white;
                 strokeText.text = "Stroke: " + stroke;
             }
+        }
+    }
+    [Header("Hole")]
+    private int hole = 1;
+    [SerializeField] private TMP_Text holeText;
+    public void AddHole()
+    {
+        hole++;
+        UpdateHoleText();
+    }
+    private void UpdateHoleText()
+    {
+        if (holeText != null)
+        {
+            holeText.text = "Hole #" + hole;
         }
     }
 
