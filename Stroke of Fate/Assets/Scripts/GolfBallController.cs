@@ -153,7 +153,7 @@ public class GolfBallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Walls"))
         {
-            //Add wallVelocityMultiplier to the current velocity of the ball
+            //Multiply wallVelocityMultiplier to the current velocity of the ball
             rb.linearVelocity += rb.linearVelocity.normalized * wallVelocityMultiplier;
             FMODUnity.RuntimeManager.PlayOneShot(wallCollisionEvent, transform.position);
         }
