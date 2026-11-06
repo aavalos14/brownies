@@ -38,6 +38,8 @@ public class GolfBallController : MonoBehaviour
     private Vector2 startingVelocity;
 
     private bool isCharging = false;
+    public bool IsCharging => isCharging;
+
     private bool isSlowingDown = false;
     private float currentPowerPercent = 0.01f;
     private Vector2 shotDirection;
