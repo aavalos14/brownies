@@ -339,7 +339,6 @@ public class GolfBallController : MonoBehaviour
         {
             levelManager.CompleteCurrentLevel();
         }
-
         ResetBall();
     }
 
