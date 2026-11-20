@@ -410,6 +410,16 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+
+        FMODUnity.StudioEventEmitter musicEmitter = FindFirstObjectByType<FMODUnity.StudioEventEmitter>();
+        if (musicEmitter != null)
+        {
+            bool allowFadeout = musicEmitter.AllowFadeout;
+            musicEmitter.AllowFadeout = false;
+            musicEmitter.Stop();
+            musicEmitter.AllowFadeout = allowFadeout;
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
